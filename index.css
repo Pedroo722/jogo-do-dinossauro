@@ -4,6 +4,20 @@ body {
 }
 
 #board {
-    background-color: lightgray;
+    background-color: darkgray;
     border-bottom: 1px solid black;
+}
+
+#gameContainer {
+    position: relative;
+    width: 1250px; /* Largura do quadro do jogo */
+    height: 500px; /* Altura do quadro do jogo */
+    margin: 0 auto; /* Centralizar horizontalmente */
+}
+
+#startButton {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

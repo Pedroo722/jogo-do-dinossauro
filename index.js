@@ -46,6 +46,10 @@ let gameOver = false;
 let score = 0;
 let firstDeath = true; 
 
+let gameStarted = false;
+
+// Carregar jogo
+
 window.onload = function() {
     board = document.getElementById("board");
     board.height = boardHeight;
@@ -63,10 +67,16 @@ window.onload = function() {
 
     cactus3Img = new Image();
     cactus3Img.src = "./imagens/cactus3.png";
+}
 
-    requestAnimationFrame(update);
-    setInterval(placeCactus, 1000);
-    document.addEventListener("keydown", moveDino);
+function startGame() {
+    if (!gameStarted) {
+        gameStarted = true;
+        document.getElementById("startButton").style.display = "none"; // Ocultar botão "Iniciar"
+        requestAnimationFrame(update);
+        setInterval(placeCactus, 1000);
+        document.addEventListener("keydown", moveDino);
+    }
 }
 
 function loadDinoFrames() {
